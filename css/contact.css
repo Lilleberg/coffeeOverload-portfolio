@@ -1,0 +1,130 @@
+/*form*/
+.form-label {
+  display: grid;
+}
+
+label span {
+  margin: 15px 0 5px 0;
+}
+
+label span:not(.requirement), .button {
+  font-size: 1.1rem;
+}
+
+input, textarea {
+  padding-left: 5px;
+  border: 1px solid;
+}
+
+input {
+  height: 1.5rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+.requirement {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 1px solid rgb(65, 65, 65);
+}
+
+#your-name, #email, #subject, #message, .submit, .formSuccess,
+header, .main-section, footer, h1, .navbar ul {
+  border-color: var(--green);
+}
+
+.form-error, .requirement {
+  font-size: 0.9rem;
+}
+
+.form-error {
+  margin: 3px 0 0 5px;
+  color: rgb(155, 6, 6);
+}
+
+.submit {
+  display: block;
+  padding: 10px 20px;
+  margin: 30px auto 0 auto;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/*main*/
+main, .main-section {
+  background-color: var(--light-skin);
+}
+
+.main-section {
+  padding: 0 40px;
+  margin: 0 auto;
+  border: none;
+}
+
+.formSuccess {
+  color: var(--brown);
+  font-size: 1.2rem;
+  text-align: center;
+  width: fit-content;
+  padding: 10px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  z-index: 5;
+}
+
+@media only screen and (min-width: 500px) {
+  #form {
+    width: 400px;
+    margin: auto;
+  }
+
+  label span {
+    margin-top: 25px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  main, .main-section {
+    background-color: var(--brown);
+  }
+
+  #form label span {
+    color: var(--light-skin);
+  }
+
+  .form-error {
+    color: #fff;
+  }
+
+  .requirement {
+    border-color: var(--light-skin);
+  }
+}
+
+@media only screen and (min-width: 2200px){
+  #form {
+    width: 450px;
+  }
+
+  label span:not(.requirement) {
+    font-size: 1.4rem;
+  }
+
+  .requirement {
+    font-size: 1.1rem;
+  }
+
+  label span {
+    margin-bottom: 8px;
+  }
+
+  .submit {
+    margin-top: 40px;
+    font-size: 1.5rem;
+  }
+}

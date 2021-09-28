@@ -1,0 +1,115 @@
+:root {
+  --brown: #583b20;
+  --pink: #d1786c;
+  --blue: #2b7b8c;
+  --green: #3f8f84;
+  --yellow: #d6a530;
+  --light-skin: #feebda;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*header*/
+.active {
+  text-decoration: underline;
+}
+
+main {
+  background-color: var(--brown);
+  min-height: 80vh;
+}
+
+.search-bar, .form-error, .formSuccess, .modal, .search-button {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*buttons*/
+button {
+  border: none;
+}
+
+button, h1, .post-container, .error, .formSuccess, .to-top {
+  background-color: #fff;
+}
+
+button, .modal-content {
+  cursor: pointer;
+}
+
+.carousel-back, .carousel-forth, .to-top {
+  padding: 5px 8px;
+}
+
+/*borders*/
+.carousel-back, .carousel-forth, .to-top, .view-more, .submit {
+  border-radius: 50px;
+}
+
+.post-container, h1, .form-label input, textarea, .formSuccess,
+.main-section, img, .post-container, .error {
+  border-radius: 8px;
+}
+
+.post-container, .form-label input:focus, textarea:focus, .submit,
+.formSuccess, .main-section, .view-more, h1, .back-forth button, .to-top {
+  border: 3px solid;
+}
+
+header, .navbar ul {
+  border-bottom: 3px solid;
+}
+
+footer, .navbar ul {
+  border-top: 3px solid;
+}
+
+/*nav*/
+.back-forth button, .to-top i {
+color: var(--blue);
+}
+
+/*footer*/
+.footer-sm p:last-of-type {
+  font-size: 0.8rem;
+  padding-bottom: 5px;
+}
+
+/*loader*/
+.loader {
+  position: fixed;
+  top: 30%;
+  left: 47%;
+  width: 60px;
+  height: 60px;
+  border: 5px solid var(--green);
+  border-top: 5px solid var(--pink);
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*error*/
+.error {
+  width: fit-content;
+  width: -moz-fit-content;
+  height: 240px;
+  margin: 20px auto;
+  padding: 30px 10px;
+  color: var(--brown);
+  background-image: url(../../Images/frog.png);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center bottom 20px;
+}

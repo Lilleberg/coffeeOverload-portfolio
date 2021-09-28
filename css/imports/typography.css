@@ -1,0 +1,30 @@
+.error, nav ul li, .back-forth > *, .desk-middle p:first-of-type {
+  font-size: 1.5rem;
+}
+
+input, textarea, .footer-desktop > * {
+  font-size: 1rem;
+}
+
+h1, h2, h3, .view-more {
+  color: var(--blue);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, nav ul li, a, footer p, .submit, .formSuccess, .view-more,
+.error, .date {
+  font-family: "Overlock", "Montserrat", "Verdana", "sans-serif";
+  font-weight: 400;
+}
+
+p, .form-label span, input, textarea, .form-error, figcaption, ol li {
+  font-family: "Source Sans Pro", "Montserrat", "Verdana", "sans-serif";
+}
+
+p, .form-label span, .form-error, .submit, .main-section ol, figcaption,
+figcaption a, .popular-container a, .desk-right p, .about, .home, .contact, .posts {
+  color: var(--brown);
+}

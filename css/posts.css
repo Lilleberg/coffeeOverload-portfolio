@@ -1,0 +1,76 @@
+.main-section, .more {
+  padding: 0 10px;
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.post-container {
+  padding: 10px 5px;
+}
+
+.post-container a {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-container img {
+  width: 110px;
+  align-self: center;
+  margin: 10px 0;
+}
+
+.view-more {
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 10px 20px;
+}
+
+.more {
+  margin-top: 10px;
+}
+
+.view-more, h1, .post-container, .more, header, footer, .navbar ul, .view-more {
+  border-color: var(--blue);
+}
+
+@media only screen and (min-width: 500px) {
+  
+  .main-section, .more {
+    gap: 40px;
+    padding: 0 50px 20px 50px;
+  }
+
+  .post-container {
+    padding: 10px;
+    max-width: 210px;
+  }
+
+  .main-section div:nth-child(odd), .more div:first-of-type {
+    justify-self: end;
+  }
+
+  .main-section div:nth-child(even), .more div:nth-child(2) {
+    justify-self: start;
+  }
+
+  .view-more {
+    margin: 20px auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .post-container {
+    max-width: 300px;
+    width: 300px;
+    padding: 15px;
+  }
+
+  .post-container img {
+    height: 120px;
+    width: auto;
+    margin: 20px 0;
+  }
+}

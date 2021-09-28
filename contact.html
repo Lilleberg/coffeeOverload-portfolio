@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="You can contact me through this contact form if you're wondering about anything.">
+  <script src="https://kit.fontawesome.com/96bb08a331.js"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <link href="css/imports/global_small.css" rel="stylesheet">
+  <link href="css/imports/global_large.css" rel="stylesheet">
+  <link href="css/contact.css" rel="stylesheet">
+  <title>Coffee Overload | Contact</title>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="small-med_screen logo_top">
+      <a href="index.html" class="logo"><img src="images/Logo.png"
+          alt="Logo for Coffee Overload"></a>
+      <a href="#" class="hamburger-icon"><i class="fas fa-bars"></i></a>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html" class="logo logo_desktop"><img
+          src="images/Logo.png" alt="Logo for Coffee Overload"></a>
+      <ul>
+        <li><a href="index.html" class="home">Home</a></li>
+        <li><a href="posts.html" class="posts">Posts</a></li>
+        <li><a href="about.html" class="about">About</a></li>
+        <li class="active"><a href="contact.html"
+            class="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav class="navbar-desktop">
+      <div class="desktop_header">
+        <a href="index.html" class="logo logo_desktop"><img
+            src="images/Logo.png" alt="Logo for Coffee Overload"></a>
+        <ul>
+          <li><a href="index.html" class="home">Home</a></li>
+          <li><a href="posts.html" class="posts">Posts</a></li>
+          <li><a href="about.html" class="about">About</a></li>
+          <li class="active"><a href="contact.html"
+              class="contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact</h1>
+    <div class="formSuccess">Your message has been sent!</div>
+    <div class="main-section">
+      <form id="form" method="post">
+        <div>
+          <label for="your-name" class="form-label">
+            <span>Name <span class="requirement">min. 5
+                characters</span></span>
+            <input type="text" name="your-name" id="your-name">
+          </label>
+          <div class="form-error nameError">*Must be at least 5 characters
+            long</div>
+        </div>
+        <div>
+          <label for="email" class="form-label">
+            <span>Email address <span
+                class="requirement">hello@example.com</span></span>
+            <input type="email" name="email" id="email">
+          </label>
+          <div class="form-error emailError">*Please enter a valid email
+            address</div>
+        </div>
+        <div>
+          <label for="subject" class="form-label">
+            <span>Subject <span class="requirement">min. 15
+                characters</span></span>
+            <input type="text" name="subject" id="subject">
+          </label>
+          <div class="form-error subjectError">*Must be at least 15
+            characters long</div>
+        </div>
+        <div>
+          <label for="message" class="form-label">
+            <span>Message <span class="requirement">min. 25
+                characters</span></span>
+            <textarea name="message" id="message" rows="5"></textarea>
+          </label>
+          <div class="form-error messageError">*Must be at least 25
+            characters long</div>
+        </div>
+        <button type="submit" class="button submit" disabled
+          style="filter: grayscale(100%)">Send</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-sm">
+      <p>Grind, brew, enjoy...</p>
+      <p class="copyright">Copyright &copy; Coffee Overload 2021</p>
+    </div>
+    <section class="footer-desktop">
+      <div class="foot-desk-style">
+        <div class="popular_posts">
+          <h4>Popular Posts</h4>
+          <div class="popular-container"></div>
+          <!--Insert in JS-->
+        </div>
+        <div class="desk-middle">
+          <p>Grind, brew, enjoy...</p>
+          <p class="copyright">Copyright &copy; Coffee Overload 2021</p>
+        </div>
+        <div class="desk-right">
+          <a href="#top">
+            <p>Take me to the top!</p>
+            <p class="button to-top"><i class="fas fa-arrow-up"></i></p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <script src="js/errorMessage.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+.main-section {
+  padding: 0 50px;
+  border: none;
+}
+
+header, .navbar ul, h1, .post-container, footer, .back-forth button {
+  border-color: var(--yellow);
+}
+
+.post-container {
+  height: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.post-container a {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-container img {
+  width: 160px;
+  align-self: center;
+  margin: 10px 0;
+}
+
+.back-forth {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+@media only screen and (min-width: 450px) and (max-width: 499px) {
+  .main-section {
+    padding: 0 70px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .main-section {
+    height: 555px;
+  }
+
+  .slides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .slides div:first-of-type, .slides div:nth-child(3) {
+    justify-self: end;
+  }
+
+  .slides div:nth-child(2), .slides div:nth-child(4) {
+    justify-self: start;
+  }
+
+  .post-container {
+    margin-bottom: 0;
+    width: 215px;
+    padding: 5px 10px;
+  }
+
+  .back-forth {
+    margin: 30px auto 10px auto;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  .main-section {
+    height: 680px;
+  }
+
+  .main-section .slides {
+    gap: 60px;
+  }
+
+  .back-forth {
+    margin-top: 50px;
+    gap: 50px;
+  }
+
+  .post-container {
+    width: 350px;
+    padding: 20px;
+  }
+
+  .post-container img {
+    margin: 30px auto;
+    width: 200px;
+  }
+}

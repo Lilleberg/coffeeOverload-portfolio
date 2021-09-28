@@ -1,0 +1,72 @@
+header, .main-section, footer, h1, .navbar ul {
+  border-color: var(--pink);
+}
+
+.main-section {
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.main-section p {
+  margin-bottom: 20px;
+}
+
+.main-section img {
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.main-section div {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 500px) {
+  .main-section {
+    margin: 0 50px 20px 50px;
+  }
+
+  .main-section img {
+    width: 250px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .main-section {
+    margin: 0 80px 20px 80px;
+  }
+
+  .main-section img {
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .main-section {
+    width: 60%;
+    margin: 0 auto 20px auto;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .main-section {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  .main-section {
+    padding: 30px;
+    width: 35%;
+  }
+
+  h2:nth-child(5) {
+    margin-top: 40px;
+  }
+}

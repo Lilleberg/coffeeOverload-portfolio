@@ -1,0 +1,134 @@
+@import "global.css";
+@import "typography.css";
+
+.navbar, footer .footer-desktop, .logo_desktop, .navbar-desktop {
+  display: none;
+}
+/*header logo*/
+.logo_top {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  place-items: center;
+}
+
+.logo_top .logo {
+  width: 60%;
+  margin-top: 5px;
+}
+
+.logo_top .logo img {
+  display: block;
+}
+
+.hamburger-icon {
+  z-index: 120;
+  margin-right: 20px;
+}
+
+.fa-times {
+  margin-top: 10px;
+  font-size: 1.8rem;
+}
+
+/*nav*/
+nav ul li {
+  list-style-type: none;
+}
+
+.navbar ul li {
+  text-align: right;
+  padding: 5px 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 110;
+}
+
+.navbar ul {
+  background-color: var(--light-skin);
+  padding: 50px 20px 20px 20px;
+  background-image: url(../../Images/Beans.png);
+  background-repeat: no-repeat;
+  background-size: 42%;
+  background-position: 20px 20px;
+}
+
+/*main*/
+main {
+  padding: 20px 0;
+}
+
+h1 {
+  padding: 10px 15px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  max-width: 60%;
+}
+
+h1, .view-more {
+  font-size: 1.5rem;
+}
+
+h2, .hamburger-icon {
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+/*footer*/
+.footer-sm, .hamburger-icon {
+  color: var(--blue);
+}
+
+.footer-sm p, .desk-middle {
+  text-align: center;
+}
+
+.footer-sm p:first-of-type {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/*latest posts, posts page*/
+.post-heading {
+  font-size: 1.3rem;
+}
+
+@media only screen and (min-width: 500px) {
+
+  .logo_top a {
+    max-width: 60%;
+    margin-left: 20px;
+    grid-template-columns: auto 1fr;
+  }
+
+  .logo_top a:first-of-type {
+    justify-self: start;
+  }
+
+  .hamburger-icon {
+    font-size: 1.7rem;
+    justify-self: end;
+  }
+
+  .navbar ul {
+    background-size: 12rem;
+  }
+
+  .fa-times {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    margin: 20px auto 40px auto;
+    max-width: 25%;
+  }
+}

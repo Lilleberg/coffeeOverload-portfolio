@@ -1,0 +1,182 @@
+@import "global.css";
+@import "typography.css";
+
+@media only screen and (min-width: 1100px) {
+
+  .logo_top, .footer-sm, .navbar {
+    display: none;
+  }
+
+  .logo_desktop, .navbar-desktop, footer .footer-desktop {
+    display: block;
+  }
+
+  header .active {
+    text-decoration: none;
+    background-color: #fcc694;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-shadow: 3px 5px 8px #af6c20;
+  }
+  
+  header .active a {
+    color: var(--brown);
+  }
+  
+  header {
+    border-bottom: 3px solid;
+    padding: 20px;
+    background-image: url(../../Images/beans_desk.png);
+    background-repeat: no-repeat;
+    background-size: 13%;
+    background-position: right 10px top 10px;
+  }
+
+  .desktop_header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 50px;
+    place-items: center;
+  }
+
+  /*navbar*/
+  .navbar-desktop {
+    position: relative;
+  }
+
+  .navbar-desktop ul {
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    place-items: center;
+  }
+
+  header, .logo_desktop img, footer {
+    background-color: var(--light-skin);
+  }
+
+  .logo_desktop img {
+    display: block;
+    margin-top: 5px;
+  }
+
+  .logo_desktop {
+    width: 16rem;
+    justify-self: start;
+  }
+
+  /*posts*/
+  h1 {
+    width: fit-content;
+    width: -moz-fit-content;
+    padding: 10px 70px;
+    font-size: 2rem;
+  }
+
+  .post-heading {
+    font-size: 1.5rem;
+  }
+
+  /*footer*/
+
+  .popular_posts h4 {
+    color: #0b5566;
+  }
+
+  footer > * {
+    margin: 0;
+    padding: 15px;
+  }
+
+  .footer-desktop h3, .to-top i, h4 {
+    font-size: 1.3rem;
+  }
+
+  .foot-desk-style {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+  .desk-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .desk-right {
+    align-self: center;
+  }
+
+  .desk-right a {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
+
+  .to-top {
+    border-color: var(--yellow);
+    margin-top: 10px;
+  }
+
+  .popular-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .popular-container a:first-of-type, .popular-container a:nth-child(2) {
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  header {
+    background-size: 11%;
+  }
+}
+
+@media only screen and (min-width: 1930px) {
+  main {
+    min-height: 80vh;
+  }
+
+  .logo_desktop {
+    width: 22rem;
+    justify-self: start;
+  }
+
+  header {
+    background-size: 12%;
+  }
+
+  nav ul li {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  
+  .logo_desktop {
+    width: 24rem;
+  }
+
+  header {
+    padding: 30px 10px 20px 10px;
+  }
+
+  h1 {
+    margin: 50px auto 70px auto;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .desk-middle p:first-of-type {
+    font-size: 2rem;
+  }
+}
