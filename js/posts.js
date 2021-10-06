@@ -1,10 +1,6 @@
 const main = document.querySelector("main");
 const postContainer = document.querySelector(".main-section");
 const viewMoreButton = document.querySelector(".view-more");
-const wrapper = document.querySelector(".wrapper");
-const moreContainer = document.querySelector(".more");
-
-wrapper.style.display = "none";
 
 let url = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/posts?_embed&per_page=12";
 
@@ -15,11 +11,16 @@ async function getPosts(url) {
     const posts = await response.json();
 
     for (let i = 0; i < posts.length; i++) {
-
       if (i <= 9) createHTML(posts[i], postContainer);
-      if (i > 9) createHTML(posts[i], moreContainer);
-
     }
+
+    viewMoreButton.onclick = function () {
+      for (let j = 10; j < posts.length; j++) {
+        createHTML(posts[j], postContainer);
+      }
+      viewMoreButton.style.display = "none";
+    }
+
   } catch (error) {
     console.log("ERROR: ", error);
     setErrorMessage(main);
@@ -27,16 +28,6 @@ async function getPosts(url) {
 }
 
 getPosts(url);
-
-viewMoreButton.onclick = function () {
-  if (wrapper.style.display === "none") {
-    wrapper.style.display = "block";
-    viewMoreButton.innerHTML = "View less";
-  } else {
-    wrapper.style.display = "none";
-    viewMoreButton.innerHTML = "View more";
-  }
-}
 
 function createHTML(post, container) {
   container.innerHTML += `

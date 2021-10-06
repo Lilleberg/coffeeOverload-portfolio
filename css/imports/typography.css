@@ -28,3 +28,41 @@ p, .form-label span, .form-error, .submit, .main-section ol, figcaption,
 figcaption a, .popular-container a, .desk-right p, .about, .home, .contact, .posts {
   color: var(--brown);
 }
+
+@media only screen and (min-width: 1100px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .post-heading {
+    font-size: 1.5rem;
+  }
+
+  .footer-desktop h3, .to-top i, h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1930px) {
+  nav ul li {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2, .post-container .post-heading {
+    font-size: 2.5rem;
+  }
+
+  h4, .desk-middle p:first-of-type {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
