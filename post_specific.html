@@ -57,8 +57,24 @@
 
   <main>
     <div class="loader"></div>
-    <h1 style="visibility: hidden;"></h1>
-    <section class="main-section" style="visibility: hidden;">
+    <section>
+      <h1 style="visibility: hidden;"></h1>
+      <div class="main-section" style="visibility: hidden;">
+      </div>
+    </section>
+
+    <section>
+      <h3>Comments</h3>
+      <form method="POST">
+        <label>
+          <span>Name</span>
+          <input type="text" name="your-name" id="your-name">
+        </label>
+        <label>
+          <span>Comment</span>
+          <textarea name="comment" id="comment" rows="5"></textarea>
+        </label>
+      </form>
     </section>
     <div class="modal">
       <div class="modal-content" id="modalImg"></div>
