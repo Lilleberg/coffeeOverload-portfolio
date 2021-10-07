@@ -3,6 +3,7 @@ const main = document.querySelector("main");
 const metaDescription = document.querySelector('meta[name="description"]');
 const modal = document.querySelector(".modal");
 const h1 = document.querySelector("h1");
+const buttonSendComment = document.querySelector(".submit");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -58,6 +59,27 @@ async function getPost(url) {
 }
 
 getPost(url);
+
+/* const urlComment = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments/" + id;
+
+async function getComments(url) {
+  try {
+    const response = await fetch(url);
+    const comment = await response.json();
+
+    console.log(comment);
+  } catch (error) {
+    console.log("ERROR:", error);
+  }
+}
+
+getComments(urlComment);
+
+buttonSendComment.onSubmit = function (event) {
+  event.preventDefault();
+
+  const formElement = 
+} */
 
 /*Modal has width and height 100% when displayed*/
 window.addEventListener("click", function (event) {

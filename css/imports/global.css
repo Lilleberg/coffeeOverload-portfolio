@@ -44,7 +44,7 @@ button, .modal-content {
   cursor: pointer;
 }
 
-.carousel-back, .carousel-forth, .to-top {
+.carousel-back, .carousel-forth, .to-top, .comment-section .submit {
   padding: 5px 8px;
 }
 
@@ -54,12 +54,13 @@ button, .modal-content {
 }
 
 .post-container, h1, .form-label input, textarea, .formSuccess,
-.main-section, img, .post-container, .error {
+.main-section, img, .post-container, .error, .comment-section {
   border-radius: 8px;
 }
 
 .post-container, .form-label input:focus, textarea:focus, .submit,
-.formSuccess, .main-section, .view-more, h1, .back-forth button, .to-top {
+.formSuccess, .main-section, .view-more, h1, .back-forth button,
+.to-top, .comment-section {
   border: 3px solid;
 }
 

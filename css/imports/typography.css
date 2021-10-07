@@ -1,4 +1,4 @@
-.error, nav ul li, .back-forth > *, .desk-middle p:first-of-type {
+.error, nav ul li, .back-forth > *, .desk-middle p:first-of-type, .comment-section h3 {
   font-size: 1.5rem;
 }
 
@@ -20,12 +20,12 @@ h1, h2, h3, h4, nav ul li, a, footer p, .submit, .formSuccess, .view-more,
   font-weight: 400;
 }
 
-p, .form-label span, input, textarea, .form-error, figcaption, ol li {
+p, .form-label span, input, textarea, .form-error, figcaption, ol li, label {
   font-family: "Source Sans Pro", "Montserrat", "Verdana", "sans-serif";
 }
 
 p, .form-label span, .form-error, .submit, .main-section ol, figcaption,
-figcaption a, .popular-container a, .desk-right p, .about, .home, .contact, .posts {
+figcaption a, .popular-container a, .desk-right p, .about, .home, .contact, .posts, label {
   color: var(--brown);
 }
 
@@ -34,7 +34,7 @@ figcaption a, .popular-container a, .desk-right p, .about, .home, .contact, .pos
     font-size: 2rem;
   }
 
-  .post-heading {
+  .post-heading, .comment-section h3 {
     font-size: 1.5rem;
   }
 

@@ -63,22 +63,35 @@
       </div>
     </section>
 
-    <section>
-      <h3>Comments</h3>
-      <form method="POST">
-        <label>
-          <span>Name</span>
-          <input type="text" name="your-name" id="your-name">
-        </label>
-        <label>
-          <span>Comment</span>
-          <textarea name="comment" id="comment" rows="5"></textarea>
-        </label>
-      </form>
-    </section>
     <div class="modal">
       <div class="modal-content" id="modalImg"></div>
     </div>
+
+    <section class="comment-section">
+      <h3>Comments</h3>
+      <div class="comments">
+        <!-- Insert comments here with JS -->
+      </div>
+      <form
+        action="https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments"
+        method="post" name="comment-form" id="comment-form">
+        <label for="your-name" class="form-label">
+          <span>Name</span>
+          <input type="text" name="your-name" id="your-name">
+        </label>
+        <label for="email" class="form-label">
+          <span>Email</span>
+          <input name="email" id="email"></input>
+        </label>
+        <label for="comment" class="form-label">
+          <span>Comment</span>
+          <textarea name="comment" id="comment" rows="5"></textarea>
+        </label>
+        <button type="submit" class="button submit"
+          style="filter: grayscale(100%)">Add comment</button>
+      </form>
+    </section>
+
   </main>
 
   <footer>

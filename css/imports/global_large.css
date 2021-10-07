@@ -69,7 +69,7 @@
   }
 
   /*posts*/
-  h1 {
+  h1, .comment-section h3 {
     width: fit-content;
     width: -moz-fit-content;
     padding: 10px 70px;

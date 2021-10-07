@@ -1,3 +1,4 @@
+const mainSection = document.querySelector(".main-section");
 const form = document.querySelector("#form");
 const nameInput = document.querySelector("#your-name");
 const nameError = document.querySelector(".nameError");
@@ -101,7 +102,7 @@ function setOpacity(opac) {
   });
 }
 
-function submitForm(event) {
+/* function submitForm(event) {
   event.preventDefault();
 
   formSuccess.style.display = "block";
@@ -115,7 +116,7 @@ function submitForm(event) {
   form.reset();
 }
 
-form.addEventListener("submit", submitForm);
+form.addEventListener("submit", submitForm); */
 
 function checkLength(value, len) {
   if (value.trim().length >= len) {
@@ -130,3 +131,38 @@ function checkEmail(email) {
   const checkPattern = regEx.test(email);
   return checkPattern;
 }
+
+/*Submit contact form data*/
+const contactFormHandler = (event) => {
+  event.preventDefault();
+
+  const formElement = event.target,
+    { action, method } = formElement,
+    body = new FormData(formElement);
+
+  fetch(action, {
+    method,
+    body
+  })
+
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      console.log("Success");
+      formSuccess.style.display = "block";
+      setOpacity("0.5");
+
+      setTimeout(() => {
+        formSuccess.style.display = "none";
+        setOpacity("1");
+      }, 3000);
+
+      formElement.reset();
+    })
+    .catch((error) => {
+      console.log("ERROR:", error);
+      setErrorMessage(mainSection);
+    })
+};
+
+form.addEventListener("submit", contactFormHandler);
