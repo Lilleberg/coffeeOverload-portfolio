@@ -4,6 +4,7 @@ const metaDescription = document.querySelector('meta[name="description"]');
 const modal = document.querySelector(".modal");
 const h1 = document.querySelector("h1");
 const buttonSendComment = document.querySelector(".submit");
+const form = document.querySelector("form");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -60,26 +61,75 @@ async function getPost(url) {
 
 getPost(url);
 
-/* const urlComment = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments/" + id;
+form.innerHTML = `
+  <input type="hidden" id="postId" value="${id}">
+  <label for="your-name" class="form-label">
+  <span>Name</span>
+  <input type="text" name="your-name" id="your-name">
+  </label>
+  <label for="email" class="form-label">
+  <span>Email</span>
+  <input name="email" id="email"></input>
+  </label>
+  <label for="comment" class="form-label">
+  <span>Comment</span>
+  <textarea name="comment" id="comment" rows="5"></textarea>
+  </label>
+  <button type="submit" class="button submit"
+  style="filter: grayscale(100%)">Add comment</button>`;
 
-async function getComments(url) {
-  try {
-    const response = await fetch(url);
-    const comment = await response.json();
+/* const urlComment = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments";
 
-    console.log(comment);
-  } catch (error) {
-    console.log("ERROR:", error);
-  }
-}
-
-getComments(urlComment);
-
-buttonSendComment.onSubmit = function (event) {
+const contactFormHandler = (event) => {
   event.preventDefault();
 
-  const formElement = 
-} */
+  const postId = document.querySelector("#postId")
+  const name = document.querySelector("#your-name");
+  const email = document.querySelector("#email");
+  const comment = document.querySelector("#comment");
+
+  const data = ({
+    id: postId.value,
+    author_name: name.value,
+    author_email: email.value,
+    content: comment.value,
+  });
+
+  console.log(data);
+  (async () => {
+    const response = await fetch(urlComment, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+    const content = await response.json();
+    console.log(content);
+  })(); */
+
+  /* fetch(urlComment, {
+    method: "post",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+    },
+    body: data,
+  })
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok === true) {
+        console.log("Success!");
+      }
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log("ERROR:", error);
+    }); */
+}
+
+form.addEventListener("submit", contactFormHandler);
 
 /*Modal has width and height 100% when displayed*/
 window.addEventListener("click", function (event) {
