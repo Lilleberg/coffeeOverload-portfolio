@@ -78,7 +78,6 @@ const contactFormHandler = (event) => {
     content: comment.value,
   });
 
-  console.log(data);
   (async () => {
     const response = await fetch(urlComment, {
       method: "POST",
@@ -104,7 +103,17 @@ async function getComments(url) {
   console.log(comments);
 
   comments.forEach(function (comment) {
-    //slice date/time. join them
+    const str = comment.date;
+    const time = str.slice(11, 19);
+
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth();
+    const year = currentDate.getFullYear();
+    const date = day + "." + (month + 1) + "." + year;
+
+    const dateTime = date + " " + time;
+    console.log(dateTime);
 
     document.querySelector(".comments").innerHTML += `
     <div class="comment">
