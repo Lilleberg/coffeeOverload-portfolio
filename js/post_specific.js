@@ -96,14 +96,13 @@ const contactFormHandler = (event) => {
     const response = await fetch(urlComment, {
       method: "POST",
       headers: {
-        "Accept": "application/json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
     });
     const content = await response.json();
-    console.log(content);
   })();
+  alert("Your comment has been added!");
 }
 
 form.addEventListener("submit", contactFormHandler);
@@ -111,35 +110,42 @@ form.addEventListener("submit", contactFormHandler);
 const urlPostComments = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments?post=" + id;
 
 async function getComments(url) {
-  const response = await fetch(url);
-  const comments = await response.json();
+  try {
+    const response = await fetch(url);
+    const comments = await response.json();
 
-  console.log(comments);
+    comments.forEach(function (comment) {
+      /*Don't like the date format from the API*/
+      const str = comment.date;
+      const time = str.slice(11, 19);
+      const currentDate = new Date();
+      const day = currentDate.getDate();
+      const month = currentDate.getMonth();
+      const year = currentDate.getFullYear();
+      const date = day + "." + (month + 1) + "." + year;
+      const dateTime = date + " " + time;
 
-  comments.forEach(function (comment) {
-    /*Don't like the date format from the API*/
-    const str = comment.date;
-    const time = str.slice(11, 19);
-    const currentDate = new Date();
-    const day = currentDate.getDate();
-    const month = currentDate.getMonth();
-    const year = currentDate.getFullYear();
-    const date = day + "." + (month + 1) + "." + year;
-    const dateTime = date + " " + time;
-
-    document.querySelector(".comments").innerHTML += `
-    <div class="comment">
-      <div class="author-info">
-        <img src="${comment.author_avatar_urls[96]} alt="user's comment image">
-        <p>${comment.author_name}</p>
-        <p class="date">${dateTime}</p>
-      </div>
-      <div class="comment-content">${comment.content.rendered}</div>
-    </div>`;
-  });
+      createHTMLComment(comment, dateTime);
+    });
+  } catch (error) {
+    console.log("ERROR:", eroor);
+    setErrorMessage(main);
+  }
 }
 
 getComments(urlPostComments);
+
+function createHTMLComment(comment, date) {
+  document.querySelector(".comments").innerHTML += `
+  <div class="comment">
+    <div class="author-info">
+      <img src="${comment.author_avatar_urls[24]} alt="user's comment image">
+      <p>${comment.author_name}</p>
+      <p class="date">${date}</p>
+    </div>
+    <div class="comment-content">${comment.content.rendered}</div>
+  </div>`;
+}
 
 /* Comment section form error */
 const nameInput = document.querySelector("#your-name");
