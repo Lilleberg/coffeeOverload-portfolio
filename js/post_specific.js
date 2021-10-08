@@ -102,7 +102,6 @@ const contactFormHandler = (event) => {
     });
     const content = await response.json();
   })();
-  alert("Your comment has been added!");
 }
 
 form.addEventListener("submit", contactFormHandler);
@@ -126,9 +125,10 @@ async function getComments(url) {
       const dateTime = date + " " + time;
 
       createHTMLComment(comment, dateTime);
+
     });
   } catch (error) {
-    console.log("ERROR:", eroor);
+    console.log("ERROR:", error);
     setErrorMessage(main);
   }
 }
