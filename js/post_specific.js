@@ -61,35 +61,18 @@ async function getPost(url) {
 
 getPost(url);
 
-form.innerHTML = `
-  <input type="hidden" id="postId" value="${id}">
-  <label for="your-name" class="form-label">
-  <span>Name</span>
-  <input type="text" name="your-name" id="your-name">
-  </label>
-  <label for="email" class="form-label">
-  <span>Email</span>
-  <input name="email" id="email"></input>
-  </label>
-  <label for="comment" class="form-label">
-  <span>Comment</span>
-  <textarea name="comment" id="comment" rows="5"></textarea>
-  </label>
-  <button type="submit" class="button submit"
-  style="filter: grayscale(100%)">Add comment</button>`;
-
-/* const urlComment = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments";
+const urlComment = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments";
 
 const contactFormHandler = (event) => {
   event.preventDefault();
 
-  const postId = document.querySelector("#postId")
+  //const postId = document.querySelector("#postId");
   const name = document.querySelector("#your-name");
   const email = document.querySelector("#email");
   const comment = document.querySelector("#comment");
 
   const data = ({
-    id: postId.value,
+    post: id,
     author_name: name.value,
     author_email: email.value,
     content: comment.value,
@@ -107,29 +90,37 @@ const contactFormHandler = (event) => {
     });
     const content = await response.json();
     console.log(content);
-  })(); */
-
-  /* fetch(urlComment, {
-    method: "post",
-    headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json",
-    },
-    body: data,
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      if (response.ok === true) {
-        console.log("Success!");
-      }
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log("ERROR:", error);
-    }); */
+  })();
 }
 
 form.addEventListener("submit", contactFormHandler);
+
+const urlPostComments = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments?post=" + id;
+
+async function getComments(url) {
+  const response = await fetch(url);
+  const comments = await response.json();
+
+  console.log(comments);
+
+  comments.forEach(function (comment) {
+    //slice date/time. join them
+
+    document.querySelector(".comments").innerHTML += `
+    <div class="comment">
+      <div class="author-info">
+        <img src="${comment.author_avatar_urls[96]}">
+        <p>${comment.author_name}</p>
+        <div>
+        <p>${comment.date}</p>
+        </div>
+      </div>
+      <div class="comment-content">${comment.content.rendered}</div>
+    </div>`;
+  });
+}
+
+getComments(urlPostComments);
 
 /*Modal has width and height 100% when displayed*/
 window.addEventListener("click", function (event) {
