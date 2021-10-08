@@ -102,22 +102,6 @@ function setOpacity(opac) {
   });
 }
 
-/* function submitForm(event) {
-  event.preventDefault();
-
-  formSuccess.style.display = "block";
-  setOpacity("0.5");
-
-  setTimeout(() => {
-    formSuccess.style.display = "none";
-    setOpacity("1");
-  }, 3000);
-
-  form.reset();
-}
-
-form.addEventListener("submit", submitForm); */
-
 function checkLength(value, len) {
   if (value.trim().length >= len) {
     return true;
@@ -157,6 +141,7 @@ const contactFormHandler = (event) => {
         setOpacity("1");
       }, 3000);
 
+      form.reset();
     })
     .catch((error) => {
       console.log("ERROR:", error);
