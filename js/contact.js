@@ -132,7 +132,6 @@ function checkEmail(email) {
   return checkPattern;
 }
 
-const contactFormUrl = "https://gamehub-maria.digital/projectexam1/wp-json/contact-form-7/v1/contact-forms/174/feedback";
 /*Submit contact form data*/
 const contactFormHandler = (event) => {
   event.preventDefault();
