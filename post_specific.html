@@ -72,23 +72,28 @@
       <div class="comments">
         <!-- Insert comments here with JS -->
       </div>
+      <h4>Leave a comment if you wish!</h4>
       <form
         action="https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments"
         method="post" name="comment-form" id="comment-form">
         <label for="your-name" class="form-label">
           <span>Name</span>
           <input type="text" name="your-name" id="your-name">
+          <div class="form-error nameError">Please enter your name</div>
         </label>
         <label for="email" class="form-label">
           <span>Email</span>
           <input name="email" id="email"></input>
+          <div class="form-error emailError">Please enter a valid email
+          </div>
         </label>
         <label for="comment" class="form-label">
           <span>Comment</span>
           <textarea name="comment" id="comment" rows="5"></textarea>
+          <div class="form-error commentError">Please enter a comment</div>
         </label>
         <button type="submit" class="button submit"
-          style="filter: grayscale(100%)">Add comment</button>
+          style="filter: grayscale(100%)" disabled>Add comment</button>
       </form>
     </section>
 

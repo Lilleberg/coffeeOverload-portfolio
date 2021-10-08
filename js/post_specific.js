@@ -3,7 +3,6 @@ const main = document.querySelector("main");
 const metaDescription = document.querySelector('meta[name="description"]');
 const modal = document.querySelector(".modal");
 const h1 = document.querySelector("h1");
-const buttonSendComment = document.querySelector(".submit");
 const form = document.querySelector("form");
 
 const queryString = document.location.search;
@@ -39,7 +38,7 @@ async function getPost(url) {
     postContainer.style.visibility = "visible";
 
     /*Set modal on images, as well as blur on background*/
-    let images = document.querySelectorAll("section > figure > img");
+    let images = document.querySelectorAll("div > figure > img");
 
     images.forEach(function (image) {
       image.addEventListener("click", function () {
@@ -61,12 +60,27 @@ async function getPost(url) {
 
 getPost(url);
 
+/* MODAL */
+window.addEventListener("click", function (event) {
+  if (event.target === modal) {
+    setStyles(null, "none");
+  }
+});
+
+function setStyles(blur, styleDisplay) {
+  const elements = document.querySelectorAll(".main-section, h1, header, footer");
+  elements.forEach(function (element) {
+    modal.style.display = styleDisplay;
+    element.style.filter = blur;
+  });
+}
+
+/* COMMENT SECTION */
 const urlComment = "https://gamehub-maria.digital/projectexam1/wp-json/wp/v2/comments";
 
 const contactFormHandler = (event) => {
   event.preventDefault();
 
-  //const postId = document.querySelector("#postId");
   const name = document.querySelector("#your-name");
   const email = document.querySelector("#email");
   const comment = document.querySelector("#comment");
@@ -103,26 +117,22 @@ async function getComments(url) {
   console.log(comments);
 
   comments.forEach(function (comment) {
+    /*Don't like the date format from the API*/
     const str = comment.date;
     const time = str.slice(11, 19);
-
     const currentDate = new Date();
     const day = currentDate.getDate();
     const month = currentDate.getMonth();
     const year = currentDate.getFullYear();
     const date = day + "." + (month + 1) + "." + year;
-
     const dateTime = date + " " + time;
-    console.log(dateTime);
 
     document.querySelector(".comments").innerHTML += `
     <div class="comment">
       <div class="author-info">
-        <img src="${comment.author_avatar_urls[96]}">
+        <img src="${comment.author_avatar_urls[96]} alt="user's comment image">
         <p>${comment.author_name}</p>
-        <div>
-        <p>${comment.date}</p>
-        </div>
+        <p class="date">${dateTime}</p>
       </div>
       <div class="comment-content">${comment.content.rendered}</div>
     </div>`;
@@ -131,17 +141,89 @@ async function getComments(url) {
 
 getComments(urlPostComments);
 
-/*Modal has width and height 100% when displayed*/
-window.addEventListener("click", function (event) {
-  if (event.target === modal) {
-    setStyles(null, "none");
+/* Comment section form error */
+const nameInput = document.querySelector("#your-name");
+const nameError = document.querySelector(".nameError");
+const email = document.querySelector("#email");
+const emailError = document.querySelector(".emailError");
+const comment = document.querySelector("#comment");
+const commentError = document.querySelector(".commentError");
+const submit = document.querySelector(".submit");
+
+submit.style.filter = "grayscale(100%)";
+
+function checkInputs() {
+  if (checkLength(nameInput.value, 1) && checkEmail(email.value) && checkLength(comment.value, 1)) {
+    submit.disabled = false;
+    submit.style.filter = "grayscale(0%)";
+  } else {
+    submit.disabled = true;
+    submit.style.filter = "grayscale(100%)";
+  }
+}
+
+nameInput.addEventListener("keyup", checkInputs);
+email.addEventListener("keyup", checkInputs);
+comment.addEventListener("keyup", checkInputs);
+
+nameInput.addEventListener("blur", (event) => {
+  if (checkLength(nameInput.value, 1)) {
+    nameError.style.display = "none";
+  } else {
+    nameError.style.display = "block";
   }
 });
 
-function setStyles(blur, styleDisplay) {
-  const elements = document.querySelectorAll(".main-section, h1, header, footer");
-  elements.forEach(function (element) {
-    modal.style.display = styleDisplay;
-    element.style.filter = blur;
-  });
+nameInput.addEventListener("focus", (event) => {
+  if (nameInput) {
+    nameError.style.display = "none";
+  } else {
+    nameError.style.display = "block";
+  }
+});
+
+email.addEventListener("blur", (event) => {
+  if (checkEmail(email.value)) {
+    emailError.style.display = "none";
+  } else {
+    emailError.style.display = "block";
+  }
+});
+
+email.addEventListener("focus", (event) => {
+  if (email) {
+    emailError.style.display = "none";
+  } else {
+    emailError.style.display = "block";
+  }
+});
+
+comment.addEventListener("blur", (event) => {
+  if (checkLength(comment.value, 1)) {
+    commentError.style.display = "none";
+  } else {
+    commentError.style.display = "block";
+  }
+});
+
+comment.addEventListener("focus", (event) => {
+  if (comment) {
+    commentError.style.display = "none";
+  } else {
+    commentError.style.display = "block";
+  }
+});
+
+function checkLength(value, len) {
+  if (value.trim().length >= len) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkEmail(email) {
+  const regEx = /\S+@\S+\.\S+/;
+  const checkPattern = regEx.test(email);
+  return checkPattern;
 }

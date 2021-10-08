@@ -43,7 +43,8 @@ figcaption {
 }
 
 .main-section, header, footer, h1, .navbar ul, .comment-section,
-form input, .comment-section textarea, .submit, .form-label input:focus {
+form input, .comment-section textarea, .submit,
+.form-label input:focus, .comment {
   border-color: var(--green);
 }
 
@@ -78,7 +79,13 @@ form input, .comment-section textarea, .submit, .form-label input:focus {
 /*comment section*/
 .comment-section h3 {
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
+}
+
+.comment-section h4 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 form {
@@ -112,6 +119,35 @@ input:focus, textarea:focus {
   outline: none;
 }
 
+.comment {
+  padding: 10px 0;
+}
+
+.author-info img {
+  width: 40px;
+}
+
+.author-info {
+  display: grid;
+  grid-template-columns: repeat(2, auto) 1fr;
+  gap: 10px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.comment-section .date {
+  font-size: 0.8rem;
+  font-style: italic;
+  justify-self: end;
+  text-align: end;
+  padding-left: 20px;
+}
+
+.form-error {
+  color: rgb(131, 3, 3);
+  padding-top: 3px;
+}
+
 @media only screen and (min-width: 400px) and (max-width: 750px) and (orientation: landscape) {
   .modal-content {
     width: 60%;
@@ -140,12 +176,23 @@ input:focus, textarea:focus {
   label {
     min-width: 70%;
   }
+
+  .comment {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (min-width: 700px) {
-  .main-section, .comment-section {
+  .main-section {
     width: 70%;
     margin: 0 auto 20px auto;
+  }
+
+  .comment-section {
+    width: fit-content;
+    width: -moz-fit-content;
+    margin: 20px auto 0 auto;
   }
 
   .main-section img {
@@ -159,10 +206,14 @@ input:focus, textarea:focus {
   label {
     min-width: 300px;
   }
+
+  .comment {
+    width: 400px;
+  }
 }
 
 @media only screen and (min-width: 900px) {
-  .main-section, .comment-section {
+  .main-section {
     width: 50%;
     padding: 20px;
   }
@@ -178,7 +229,7 @@ input:focus, textarea:focus {
 }
 
 @media only screen and (min-width: 2000px) {
-  .main-section, .comment-section {
+  .main-section {
     width: 35%;
   }
 }

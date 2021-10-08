@@ -20,12 +20,13 @@ h1, h2, h3, h4, nav ul li, a, footer p, .submit, .formSuccess, .view-more,
   font-weight: 400;
 }
 
-p, .form-label span, input, textarea, .form-error, figcaption, ol li, label {
+p, .form-label span, input, textarea, .form-error, figcaption, ol li, label, .comment-section .date {
   font-family: "Source Sans Pro", "Montserrat", "Verdana", "sans-serif";
 }
 
 p, .form-label span, .form-error, .submit, .main-section ol, figcaption,
-figcaption a, .popular-container a, .desk-right p, .about, .home, .contact, .posts, label {
+figcaption a, .popular-container a, .desk-right p, .about, .home, .contact,
+.posts, label, .comment-section .date, .comment-section h4 {
   color: var(--brown);
 }
 
