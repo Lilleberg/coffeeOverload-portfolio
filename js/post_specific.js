@@ -101,7 +101,12 @@ const contactFormHandler = (event) => {
       body: JSON.stringify(data)
     });
     const content = await response.json();
+
+    /*Update innerHTML when button is clicked to view comment right away*/
+    document.querySelector(".comments").innerHTML = "";
+    getComments(urlPostComments);
   })();
+  form.reset();
 }
 
 form.addEventListener("submit", contactFormHandler);
@@ -113,7 +118,10 @@ async function getComments(url) {
     const response = await fetch(url);
     const comments = await response.json();
 
-    comments.forEach(function (comment) {
+    //Latest comment at bottom.
+    const commentsAsc = comments.reverse();
+
+    commentsAsc.forEach(function (comment) {
       /*Don't like the date format from the API*/
       const str = comment.date;
       const time = str.slice(11, 19);
@@ -139,7 +147,7 @@ function createHTMLComment(comment, date) {
   document.querySelector(".comments").innerHTML += `
   <div class="comment">
     <div class="author-info">
-      <img src="${comment.author_avatar_urls[24]} alt="user's comment image">
+      <img src="${comment.author_avatar_urls[96]} alt="user's comment image">
       <p>${comment.author_name}</p>
       <p class="date">${date}</p>
     </div>
