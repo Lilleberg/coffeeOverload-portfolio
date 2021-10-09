@@ -64,7 +64,7 @@ button, .modal-content {
 
 .post-container, .form-label input:focus, textarea:focus, .submit,
 .formSuccess, .main-section, .view-more, h1, .back-forth button,
-.to-top, .comment-section {
+.to-top, .comment-section, .sort-container .category {
   border: 3px solid;
 }
 

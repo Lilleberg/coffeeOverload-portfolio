@@ -26,7 +26,7 @@ p, .form-label span, input, textarea, .form-error, figcaption, ol li, label, .co
 
 p, .form-label span, .form-error, .submit, .main-section ol, figcaption,
 figcaption a, .popular-container a, .desk-right p, .about, .home, .contact,
-.posts, label, .comment-section .date, .comment-section h4 {
+.posts, label, .comment-section .date, .comment-section h4, .sort-container .sort {
   color: var(--brown);
 }
 
