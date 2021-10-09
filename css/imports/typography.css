@@ -44,13 +44,11 @@ figcaption a, .popular-container a, .desk-right p, .about, .home, .contact,
   }
 }
 
-@media only screen and (min-width: 1930px) {
+@media only screen and (min-width: 1950px) {
   nav ul li {
     font-size: 1.8rem;
   }
-}
 
-@media only screen and (min-width: 2200px) {
   h1 {
     font-size: 2.8rem;
   }
@@ -63,7 +61,7 @@ figcaption a, .popular-container a, .desk-right p, .about, .home, .contact,
     font-size: 2rem;
   }
 
-  p {
+  p, .sort-container button {
     font-size: 1.5rem;
   }
 }

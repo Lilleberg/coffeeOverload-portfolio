@@ -51,6 +51,7 @@ async function getCategories(url, button) {
       for (let i = 0; i < posts.length; i++) {
         createHTML(posts[i]);
         viewMoreButton.style.display = "none";
+        dispCategory.style.display = "none";
       }
     }
 
@@ -78,7 +79,6 @@ function createHTML(post) {
 }
 
 const dispCategory = document.querySelector(".disp-sort-content");
-
 buttonCategory.onclick = function () {
   if (dispCategory.style.display === "block") {
     dispCategory.style.display = "none";
